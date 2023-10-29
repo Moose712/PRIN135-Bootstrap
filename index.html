@@ -34,13 +34,19 @@
             </div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="email">Enter Your Email:</label>
-          <input id="email" name="email" type="email" class="form-control" required />
-        </div>
-        <div class="form-group">
-          <label for="new-password">Create a New Password:</label>
-          <input id="new-password" name="new-password" type="password" class="form-control" pattern="[a-z0-5]{8,}" required />
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="new-password">Create a New Password:</label>
+              <input id="new-password" name="new-password" type="password" class="form-control" pattern="[a-z0-5]{8,}" required />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">Enter Your Email:</label>
+              <input id="email" name="email" type="email" class="form-control" required />
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label>Account Type:</label>
@@ -66,7 +72,7 @@
           <input id="age" type="number" name="age" min="13" max="120" class="form-control" />
         </div>
         <div class="form-group">
-          <label for="referrer">How did you hear about us?</label>
+          <label for="referrer">How did you hear about us:</label>
           <select id="referrer" name="referrer" class="form-control">
             <option value="">(select one)</option>
             <option value="1">freeCodeCamp News</option>
