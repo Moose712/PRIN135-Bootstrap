@@ -1,77 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Registration Form</title>
-    <link rel="stylesheet" href="styles.css" />
-    <!-- Add Bootstrap CSS link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-      /* Add custom CSS for mobile layout adjustments */
-      @media (max-width: 768px) {
-        .form-group {
-          margin-bottom: 15px;
-        }
+<head>
+  <meta charset="UTF-8">
+  <title>Registration Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Add Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Add custom CSS for mobile layout adjustments */
+    @media (max-width: 768px) {
+      .form-group {
+        margin-bottom: 15px;
       }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1 class="text-center">Registration Form</h1>
-      <p class="text-center">Please fill out this form with the required information</p>
+
+      .form-group label {
+        font-size: 16px;
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="password"],
+      .form-group input[type="number"],
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+      }
+
+      .form-group input[type="file"] {
+        border: 1px solid #ccc;
+        width: 100%;
+      }
+
+      .form-group label,
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        padding: 8px;
+      }
+
+      .form-group .btn {
+        width: 100%;
+        margin-top: 3px;
+      }
+
+      .radio-buttons {
+        display: flex;
+        align-items: center;
+      }
+
+      .radio-buttons .form-check {
+        margin-right: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-left">Registration Form</h1>
+    <p class="text-left">Please fill out this form with the required information</p>
+    <div class="form-group">
+      <label>Account Type (required):</label>
+      <div class="form-inline">
+        <div class="form-check">
+          <input id="personal-account" type="radio" name="account-type" class="form-check-input" />
+          <label for="personal-account" class="form-check-label">Personal Account</label>
+        </div>
+        <div class="form-check ml-md-5 ml-0">
+          <input id="business-account" type="radio" name="account-type" class="form-check-input" />
+          <label for="business-account" class="form-check-label">Business Account</label>
+        </div>
+      </div>
       <form method="post" action="https://register-demo.freecodecamp.org">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-6 mt-2">
             <div class="form-group">
               <label for="first-name">Enter Your First Name:</label>
               <input id="first-name" name="first-name" type="text" class="form-control" required />
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 mt-2">
             <div class="form-group">
               <label for="last-name">Enter Your Last Name:</label>
-              <input id="last-name" name="last-name" type="text" class="form-control" required />
+              <input id="last-name" name "last-name" type="text" class="form-control" required />
             </div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label for="new-password">Create a New Password:</label>
-              <input id="new-password" name="new-password" type="password" class="form-control" pattern="[a-z0-5]{8,}" required />
-            </div>
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-6 mt-2">
             <div class="form-group">
               <label for="email">Enter Your Email:</label>
               <input id="email" name="email" type="email" class="form-control" required />
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label>Account Type:</label>
-          <div class="form-check">
-            <input id="personal-account" type="radio" name="account-type" class="form-check-input" />
-            <label for="personal-account" class="form-check-label">Personal Account</label>
+          <div class="col-md-6 mt-2">
+            <div class="form-group">
+              <label for="new-password">Create a New Password:</label>
+              <input id="new-password" name="new-password" type="password" class="form-control" pattern="[a-z0-5]{8,}" required />
+            </div>
           </div>
-          <div class="form-check">
-            <input id="business-account" type="radio" name="account-type" class="form-check-input" />
-            <label for="business-account" class="form-check-label">Business Account</label>
-          </div>
-        </div>
-        <div class="form-check">
-          <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" class="form-check-input" />
-          <label for="terms-and-conditions" class="form-check-label">I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a></label>
         </div>
         <div class="form-group">
           <label for="profile-picture">Upload a profile picture:</label>
           <input id="profile-picture" type="file" name="file" class="form-control-file" />
         </div>
-        <div class="form-group">
+      </div>
+      <div class="form-group row">
+        <div class="col-md-6">
           <label for="age">Input your age (years):</label>
           <input id="age" type="number" name="age" min="13" max="120" class="form-control" />
         </div>
-        <div class="form-group">
+        <div class="col-md-6">
           <label for="referrer">How did you hear about us:</label>
           <select id="referrer" name="referrer" class="form-control">
             <option value="">(select one)</option>
@@ -81,20 +120,27 @@
             <option value="4">Other</option>
           </select>
         </div>
-        <div class="form-group">
-          <label for="bio">Provide a bio:</label>
-          <textarea id="bio" name="bio" rows="3" class="form-control" placeholder="I like coding on the beach..."></textarea>
-        </div>
-        <div class="form-group">
+      </div>
+      <div class="form-group">
+        <label for="bio">Provide a bio:</label>
+        <textarea id="bio" name="bio" rows="3" class="form-control" placeholder="I like coding on the beach..."></textarea>
+      </div>
+      <div class="form-check">
+        <input id="terms-and-conditions" type="checkbox" required name="terms-and-conditions" class="form-check-input" />
+        <label for="terms-and-conditions" class="form-check-label">I accept the <a href="https://www.freecodecamp.org/news/terms-of-service/">terms and conditions</a></label>
+      </div>
+      <div class="form-group mt-3">
+        <div class="">
           <button type="submit" class="btn btn-primary">Submit</button>
-          <button type="button" class="btn btn-secondary" id="cancel-button">Cancel</button>
+          <button type="button" class="btn btn-outline-secondary" id="cancel-button">Cancel</button>
         </div>
-      </form>
-    </div>
-    
-    <!-- Add Bootstrap JS and jQuery scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- Add Bootstrap JS and jQuery scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>
